@@ -2,8 +2,8 @@
 import net from "net";
 import readline from "readline";
 
-const client = net.connect(4000, () => {
-  console.log("enter your name first and press enter");
+const client = net.connect(4000,() => {
+  process.stdout.write("connected to server, enter your name: ")
 });
 
 client.on("data", (data) => {
@@ -17,11 +17,4 @@ const rl = readline.createInterface({
 
 rl.on('line', (input) => {
   client.write(input)
-  if (input == "exit") {
-    rl.close();
-  }
-});
-
-rl.on('close', () => {
-  process.exit(0);
 });
