@@ -1,0 +1,1 @@
+- when someone messages when one types => the console should log the message and our current message should be in new line
